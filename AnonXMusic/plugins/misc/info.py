@@ -11,7 +11,7 @@ from typing import Union, Optional
 
 EVAA = [
     [
-        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+        InlineKeyboardButton(text="• ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ •", url=f"https://t.me/MUSIC_BOT_FREE_bot?startgroup=true"),
     ],
 ]
 
@@ -63,8 +63,8 @@ font_path = "AnonXMusic/assets/hiroko.ttf"
 
 
 INFO_TEXT = """
-ㅤ   ◦•●◉✿ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ  ✿◉●•◦
-▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
+◉⭗●✿  ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ  ✿●⭗◉◦
+▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬
   
 ● ᴜsᴇʀ ɪᴅ ➥ {}
 ● ᴜsᴇʀɴᴀᴍᴇ ➥ @{}
@@ -72,8 +72,8 @@ INFO_TEXT = """
 ● ᴜsᴇʀ sᴛᴀᴛᴜs ➥ {}
 ● ᴜsᴇʀ ᴅᴄ ɪᴅ ➥ {}
 
-❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ᴀ ᴠ ɪ s ʜ ᴀ ࿐
-▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
+❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ sᴀɴᴀᴛᴀɴɪ
+▬▭▬▭▬▭▬▭▬▭▬▭▬▭▬
 """
 
 # --------------------------------------------------------------------------------- #
@@ -98,7 +98,7 @@ async def userstatus(user_id):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["xinfo", "xinformation", "xuserinfo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
+@app.on_message(filters.command(["info", "information", "userinfo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def userinfo(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
