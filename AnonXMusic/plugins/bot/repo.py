@@ -2,14 +2,14 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonXMusic import app
 
-start_txt = """**
+start_txt = """<b>
 ❖ ᴡᴏʀᴋ ɪs ɪɴ ᴘʀᴏɢʀᴇss ᴏɴ ᴛʜɪs ʙᴏᴛ
 
 ❖ ʏᴏᴜ ᴄᴀɴ ᴜsᴇ ᴛʜɪs ʙᴏᴛ ᴛᴏ ʟɪsᴛᴇɴ ᴛᴏ ᴍᴜsɪᴄ
 
 ▷ @HIMANSHI_MUSIC_BOT
 
-❍ ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ 💌 **
+❍ ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ 💌 </b>
 """
 
 @app.on_message(filters.command("play"))
