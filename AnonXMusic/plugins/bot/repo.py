@@ -1,7 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonXMusic import app
-from config import BOT_USERNAME
 
 start_txt = """**
 ❖ ᴡᴏʀᴋ ɪs ɪɴ ᴘʀᴏɢʀᴇss ᴏɴ ᴛʜɪs ʙᴏᴛ
@@ -12,9 +11,6 @@ start_txt = """**
 
 ❍ ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴍᴇ 💌 **
 """
-
-
-
 
 @app.on_message(filters.command("play"))
 async def start(_, msg):
