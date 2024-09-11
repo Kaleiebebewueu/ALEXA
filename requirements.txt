@@ -1,3 +1,4 @@
+pyromod
 aiofiles
 aiohttp
 asyncio
@@ -16,6 +17,7 @@ pyrofork
 python-dotenv
 pyyaml
 requests
+pyromod
 speedtest-cli
 spotipy
 tgcrypto
