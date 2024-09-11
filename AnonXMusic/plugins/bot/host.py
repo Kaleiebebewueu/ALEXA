@@ -188,7 +188,6 @@ async def host_app(client, message):
 
 # ============================CHECK APP==================================#
 
-
 @app.on_message(filters.command(["myhost", "mybots"]) & filters.private & SUDOERS)
 async def get_deployed_apps(client, message):
     apps = await get_app_info(message.from_user.id)
@@ -207,7 +206,7 @@ async def get_deployed_apps(client, message):
 
 
 # Handle logs fetching
-@app.on_callback_query(filters.regex(r"^get_logs:(.+)"))
+@app.on_callback_query(filters.regex("get_logs"))
 async def get_app_logs(client, callback_query):
     app_name = callback_query.data.split(":")[1]
 
