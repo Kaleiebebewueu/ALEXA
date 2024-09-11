@@ -2,6 +2,7 @@ from pyrogram import Client, errors
 from pyrogram.enums import ChatMemberStatus, ParseMode
 
 import config
+import pyromod.listen  # noqa
 
 from ..logging import LOGGER
 
