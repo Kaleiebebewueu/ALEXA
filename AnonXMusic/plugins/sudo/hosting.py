@@ -25,7 +25,7 @@ async def is_heroku():
 
 
 async def paste_neko(code: str):
-    return await VIPbin(code)
+    return await AnonyBin(code)
 
 
 def fetch_app_json(repo_url):
