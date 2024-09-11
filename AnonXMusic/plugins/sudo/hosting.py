@@ -10,7 +10,7 @@ from AnonXMusic import app
 from AnonXMusic.utils.database import delete_app_info, get_app_info
 
 # Import your MongoDB database structure
-from AnonXMusic.utils.pastebin import VIPbin
+from AnonXMusic.utils.pastebin import AnonyBin
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
