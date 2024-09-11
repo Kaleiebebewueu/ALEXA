@@ -644,3 +644,45 @@ async def remove_banned_user(user_id: int):
     if not is_gbanned:
         return
     return await blockeddb.delete_one({"user_id": user_id})
+
+
+
+# ============================HOSTING BOTS DB=============================
+
+deploy_db = mongodb.deploy_stats  # MongoDB collection for deployment stats
+
+
+# Save app deployment by user ID
+async def save_app_info(user_id: int, app_name: str):
+    # Find if the user already has an entry in the DB
+    current_entry = await deploy_db.find_one({"_id": user_id})
+
+    if current_entry:
+        # Append the new app to the existing list if it's not already there
+        apps = current_entry.get("apps", [])
+        if app_name not in apps:
+            apps.append(app_name)
+        await deploy_db.update_one({"_id": user_id}, {"$set": {"apps": apps}})
+    else:
+        # Create a new entry if it doesn't exist
+        await deploy_db.insert_one({"_id": user_id, "apps": [app_name]})
+
+
+# Get deployed apps by user ID
+async def get_app_info(user_id: int):
+    user_apps = await deploy_db.find_one({"_id": user_id})
+    return user_apps.get("apps", []) if user_apps else []
+
+
+# Delete app deployment by user ID and app name
+async def delete_app_info(user_id: int, app_name: str):
+    current_entry = await deploy_db.find_one({"_id": user_id})
+
+    if current_entry:
+        apps = current_entry.get("apps", [])
+        if app_name in apps:
+            apps.remove(app_name)
+            # Update the DB with the new list of apps
+            await deploy_db.update_one({"_id": user_id}, {"$set": {"apps": apps}})
+            return True
+    return False
